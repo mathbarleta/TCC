@@ -1,5 +1,7 @@
-<?php
+<!--
+    <?php
     session_start();
+    include_once('config.php');
     if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
     {
         unset($_SESSION['email']);
@@ -7,7 +9,15 @@
         header('Location: sing-in.php');
     }
     $logado = $_SESSION['email'];
+
+    $sql = "SELECT * FROM tb_client ORDER BY id_cliente DESC";
+
+    $result = $conexao->query($sql);
+
+    $cliente_id = $_SESSION["email"];
+    $cliente_nome = $_SESSION["cliente_nome"];
 ?>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,7 +131,7 @@
         <section id="client">
             <div>
                 <img src="Imagens/profile.png" alt="">
-                <h1>Olá NOME</h1>
+                </h1>
             </div>
             <div>
                 <form action="" method="get">
@@ -136,7 +146,6 @@
 
                     <h2>Nome Completo: <span>*</span></h2>
                     <input type="text" name="" id="">
-                        <?php echo $dado["nome"]; ?>
                     </input>
 
                     <h2>CPF: <span>*</span></h2>

@@ -162,6 +162,8 @@ main{
 #client div img{
   width: 50px;
   margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 #client div h1{
@@ -169,11 +171,17 @@ main{
   color: #6d6d6d;
   margin: auto;
   text-align: center;
+  margin-top: 20px;
 }
 
 #client div h2{
   font-size: 15px;
   color: #6d6d6d;
+  margin-top: 20px;
+}
+
+#client div h2:first-child{
+  margin: 0;
 }
 
 #client div span{
@@ -183,10 +191,6 @@ main{
 #client div form{
   display: flex;
   flex-direction: column;
-}
-
-#client div form label{
-  
 }
 
 #client div form input{
